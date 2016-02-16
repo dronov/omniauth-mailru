@@ -16,6 +16,7 @@ module OmniAuth
       }
 
       option :callback_url
+      option :client_id
 
       uid do
         access_token.params['x_mailru_vid']
@@ -42,6 +43,10 @@ module OmniAuth
 
       def callback_url
         options.callback_url || super
+      end
+
+      def client_id
+        options.client_id || super
       end
 
       private
